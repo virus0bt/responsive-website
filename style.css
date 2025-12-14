@@ -151,6 +151,11 @@
     width: min(calc(100% - 48px), calc(1200 / 16 * 1rem));
     /* pixels above as they don't change as rems when font size is increased from base 16px */
     margin-inline: auto;
+    padding-block: 60px;
+
+    @media (width >= calc(1000 / 16 * 1rem)) {
+      padding-block: 80px;
+    }
   }
 }
 
@@ -290,6 +295,37 @@
     .hero__buttons {
       display: flex;
       gap: 20px;
+    }
+  }
+  .features {
+    .features__wrapper {
+      display: grid;
+      gap: 40px;
+      justify-items: center;
+
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .features__item {
+      display: grid;
+      grid-auto-rows: min-content;
+      gap: 10px;
+
+      @media (width < calc(1000 / 16 * 1rem)) {
+        justify-items: center;
+        text-align: center;
+      }
+    }
+    .features__icon {
+      width: auto;
+      height: calc(48 / 16 * 1rem);
+    }
+    .features__title {
+      line-height: 1;
+    }
+    .features__description {
+      max-width: 40ch;
     }
   }
 }
